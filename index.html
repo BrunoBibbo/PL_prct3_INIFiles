@@ -1,0 +1,67 @@
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <title>INI Files</title>
+       <link href="global.css" rel="stylesheet" type="text/css">                    <!-- archivo de codigo de estilo css -->
+       <link rel="shortcut icon" href="INI_ico.png" type="image/x-icon">            <!-- shortcut icon, favicon -->
+       <script src="http://code.jquery.com/jquery-1.11.0.min.js"> </script>         <!-- JQuery -->
+       <script src="http://underscorejs.org/underscore.js"> </script>               <!-- Underscore -->
+       <script type="text/javascript" src="INIFiles_JM.js"></script>                <!-- archivo de codigo javascript -->
+
+   </head>
+
+   <body>
+  
+    <h1><br>Analizador de archivos INI</h1>
+      <h3><br><br>Seleccione archivos de configuración <a href="http://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a> mediante el botón <i>Elegir archivos</i> o arrastre los archivos al área indicada y se desplegará su contenido.</h3>
+     
+      <div id="drop_zone">Arrastre los archivos aquí</div>
+      <output id="list"></output>
+
+      <script>
+         function handleFileSelect(evt) 
+        {
+            evt.stopPropagation();
+            evt.preventDefault();
+
+            var files = evt.dataTransfer.files; // FileList object.
+
+            // files is a FileList of File objects. List some properties.
+            var template = _.template(usageList.innerHTML);
+            document.getElementById('list').innerHTML = template({ files : files});
+            evt.target.style.background = "black";
+        }
+
+        function handleDragOver(evt) 
+        {
+            evt.stopPropagation();
+            evt.preventDefault();
+            evt.target.style.background = "purple";
+        }
+
+
+          // Setup the drag and drop listeners.
+          var dropZone = document.getElementById('drop_zone');
+          dropZone.addEventListener('dragover', handleDragOver, false);
+          dropZone.addEventListener('drop', handleFileSelect, false);
+      </script>
+
+
+      <input type="file" id="archivos" name="archivos[]" multiple />
+      <output id="lista"></output>
+
+      <script>
+        
+        function SeleccionarArchivos(evt) 
+        {
+          var archivos = evt.target.archivos;
+
+          var template = _.template(usageList.innerHTML);
+          document.getElementById('lista').innerHTML = template({ archivos : archivos});
+        }
+
+        document.getElementById('archivos').addEventListener('change', handleFileSelect, false);
+      </script>
+
+   </body>
+</html>
