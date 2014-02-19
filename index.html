@@ -11,9 +11,9 @@
    </head>
 
    <body>
-  
+    <center>
     <h1><br>Analizador de archivos INI</h1>
-      <h3><br><br>Seleccione archivos de configuración <a href="http://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a> mediante el botón <i>Elegir archivos</i> o arrastre los archivos al área indicada y se desplegará su contenido.</h3>
+      <h3><br><br>Seleccione archivos de configuración <a href="http://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a> mediante el botón <i>"Elegir archivos"</i> o arrastre los archivos al área indicada y se desplegará su contenido.</h3>
      
       <div id="drop_zone">Arrastre los archivos aquí</div>
       <output id="list"></output>
@@ -46,7 +46,7 @@
           dropZone.addEventListener('drop', handleFileSelect, false);
       </script>
 
-
+      <br>
       <input type="file" id="archivos" name="archivos[]" multiple />
       <output id="lista"></output>
 
@@ -62,6 +62,8 @@
 
         document.getElementById('archivos').addEventListener('change', handleFileSelect, false);
       </script>
-
+      </center>
+      <br><br>
+      <a href="tests/index.html"><br><br> Tests Unitarios (Mocha, Chai) </a>
    </body>
 </html>

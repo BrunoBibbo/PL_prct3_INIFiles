@@ -1,7 +1,48 @@
-#drop_zone{
-        width:50%;
-        background-color: black;
-        color: white;
-        padding: 3% 10%;
-        text-align: center;
-      }
+h1
+{
+	font-size: 270%;
+	color: #33CC33;
+}
+h3
+{
+	color: #CCFF88;
+}
+a
+{
+	color: #99EE33;
+}
+
+#drop_zone
+{
+    width:40%;
+    /*background-color: black;*/
+    border-style:dashed;
+	border-width:3px;
+	border-color:#33CC11;
+    color: #99EE33;
+    font-weight: bold;
+    font-size: 150%;
+    padding: 3% 10%;
+    text-align: center;
+}
+
+#archivos
+{
+	color: #CCFF88;
+    font-weight: bold;
+    font-size: 100%;
+    /*padding: 3% 10%;*/
+    text-align: center;
+}
+
+body
+{
+  font-family: Arial;
+  font-size:large;
+  /*color: #FFFFFF;*/
+
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-color:#222222;
+  background-image:url('wallpaper_black.jpg');
+}
