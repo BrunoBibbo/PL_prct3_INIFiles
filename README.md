@@ -23,6 +23,6 @@ Enlaces
 
 
 [1]:http://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)
-[2]:https://github.com/alu0100597929
+[2]:https://github.com/alu0100597929/PL_prct3_INIFiles.git
 [3]:http://alu0100597929.github.io/PL_prct3_INIFiles
 [4]:http://alu0100597929.github.io/PL_prct3_INIFiles/tests/index.html
