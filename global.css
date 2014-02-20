@@ -12,13 +12,17 @@ a
 	color: #99EE33;
 }
 
+.hidden      { display: none; }
+.unhidden    { display: block; }
+
 #drop_zone
 {
     width:40%;
     /*background-color: black;*/
     border-style:dashed;
-	border-width:3px;
-	border-color:#33CC11;
+    border-width:3px;
+    border-color:#33CC11;
+    border-radius: 10px;
     color: #99EE33;
     font-weight: bold;
     font-size: 150%;
@@ -28,7 +32,7 @@ a
 
 #archivos
 {
-	color: #CCFF88;
+    color: #CCFF88;
     font-weight: bold;
     font-size: 100%;
     /*padding: 3% 10%;*/
