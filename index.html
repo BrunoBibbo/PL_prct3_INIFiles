@@ -14,9 +14,18 @@
 
    <body>
     <center>
-
+      
+      <script type="text/html" id="template_ext">
+	<li> 
+	  <span class = "<%= token.type %>"> <%= match %> </span>
+	</li>
+      </script>
+      
       <h1><br>Analizador de archivos INI</h1>
       <h3><br><br>Seleccione archivos de configuración <a href="http://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)">INI</a> mediante el botón <i>"Elegir archivos"</i> o arrastre los archivos al área indicada y se desplegará su contenido.</h3>
+
+      <a href="tests/index.html"> Tests Unitarios (Mocha, Chai) </a>
+      <br><br>
      
       <div id="drop_zone">Arrastre los archivos aquí</div>
       <output id="list"></output>
@@ -27,10 +36,17 @@
 	  evt.preventDefault();
 	  evt.target.style.background = "green";
 	}
+	
+	function handleDragLeave(evt) {
+	  evt.stopPropagation();
+	  evt.preventDefault();
+	  evt.target.style.background = "none";
+	}
 
 	// Setup the drag and drop listeners.
 	var dropZone = document.getElementById('drop_zone');
 	dropZone.addEventListener('dragover', handleDragOver, false);
+	dropZone.addEventListener('dragleave', handleDragLeave, false);
 	dropZone.addEventListener('drop', calculate, false);
       </script>	
 
@@ -51,10 +67,6 @@
       </div>
 
      </center>
-      
-      <br><br>
-      <a href="tests/index.html"><br><br> Tests Unitarios (Mocha, Chai) </a>
-      <br>
       
    </body>
 </html>

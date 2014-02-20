@@ -41,14 +41,12 @@ function calculate(evt) {
   }
 }
 
-var temp = '<li> <span class = "<%= token.type %>"> <%= match %> </span>\n';
-
 function tokensToString(tokens) {
    var r = '';
    for(var i=0; i < tokens.length; i++) {
      var t = tokens[i]
      var s = JSON.stringify(t, undefined, 2);
-     s = _.template(temp, {token: t, match: s});
+     s = _.template(template_ext.innerHTML, {token: t, match: s});
      r += s;
    }
    return '<ol>\n'+r+'</ol>';
@@ -60,12 +58,11 @@ function lexer(input) {
   var comments       = /^[;#](.*)/;
   var nameEqualValue = /^([^=;\r\n]+)=([^;\r\n]*)/;
   var any            = /^(.|\n)+/;
-  //var multiline      = /^
 
   var out = [];
   var m = null;
 
-  while (input != '') {
+  while (input != ''){
     if (m = blanks.exec(input)) {
       input = input.substr(m.index+m[0].length);
       out.push({ type : 'blanks', match: m });
@@ -78,7 +75,7 @@ function lexer(input) {
       input = input.substr(m.index+m[0].length);
       out.push({ type: 'comments', match: m });
     }
-    else if (m = nameEqualValue.exec(input)) {
+    else if (m = nameEqualValue.exec(input)){
       input = input.substr(m.index+m[0].length);
       out.push({ type: 'nameEqualValue', match: m });
     }
