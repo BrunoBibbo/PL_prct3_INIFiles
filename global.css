@@ -5,7 +5,8 @@ h1
 }
 h3
 {
-	color: #CCFF88;
+	/*color: #CCFF88;*/
+  color: #EEEEEE;
 }
 a
 {
@@ -18,7 +19,6 @@ a
 #drop_zone
 {
     width:40%;
-    /*background-color: black;*/
     border-style:dashed;
     border-width:3px;
     border-color:#33CC11;
@@ -30,23 +30,67 @@ a
     text-align: center;
 }
 
-#archivos
+#fileinput
 {
-    color: #CCFF88;
+    color: #EEEEEE;
     font-weight: bold;
     font-size: 100%;
-    /*padding: 3% 10%;*/
     text-align: center;
 }
 
+#tokens-table
+{
+
+    color: #EEEEEE;
+    display: block;
+    height: 500px; 
+    overflow: auto; 
+    width: 80%;
+    border-style: double;
+    border-color: #33CC11;
+    
+}
+th
+{
+   color: #99EE33;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   border-color: #33CC11;
+}
+#original
+{
+  vertical-align: top;
+  color: #CCFF88;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  border-color: #33CC11;
+  width: 100%;
+}
+#tokens
+{
+  vertical-align: top;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  border-color: #33CC11;
+   width: 100%;
+}
 body
 {
   font-family: Arial;
   font-size:large;
-  /*color: #FFFFFF;*/
 
   background-repeat:no-repeat;
   background-position:center top;
-  background-color:#222222;
+  background-color:#000000;
   background-image:url('wallpaper_black.jpg');
 }
+
+#result             { color: #FF8877; }
+tr.error            { color: #FF8877; }
+pre.output          { color: #EEEEEE; }
+span.repeated       { color: #FF8877; }
+span.header         { color: #EEEEEE; }
+span.comments       { color: #FFDD88; }
+span.blanks         { color: #CCFF99; }
+span.nameEqualValue { color: #CCBBDD; }
+span.error          { color: #FF8877; }

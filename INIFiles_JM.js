@@ -30,9 +30,9 @@ function calculate(evt) {
       finaloutput.innerHTML = pretty;
       
       if (window.localStorage){ 
-	localStorage.fileinput = f;
-	localStorage.initialinput = contents;
-	localStorage.finaloutput = pretty;
+  localStorage.fileinput = f;
+  localStorage.initialinput = contents;
+  localStorage.finaloutput = pretty;
       } 
     }
     r.readAsText(f);
