@@ -13,7 +13,7 @@ function calculate(evt) {
   else{
     evt.stopPropagation();
     evt.preventDefault();
-    evt.target.style.background = "green";
+    evt.target.style.background = "none";
     f = evt.dataTransfer.files[0]; 
   }
   
@@ -30,7 +30,7 @@ function calculate(evt) {
       finaloutput.innerHTML = pretty;
       
       if (window.localStorage){ 
-	//localStorage.fileinput = f;
+	localStorage.fileinput = f;
 	localStorage.initialinput = contents;
 	localStorage.finaloutput = pretty;
       } 
@@ -60,6 +60,7 @@ function lexer(input) {
   var comments       = /^[;#](.*)/;
   var nameEqualValue = /^([^=;\r\n]+)=([^;\r\n]*)/;
   var any            = /^(.|\n)+/;
+  //var multiline      = /^
 
   var out = [];
   var m = null;
@@ -96,8 +97,8 @@ function lexer(input) {
 window.onload = function() {
   // Si el navegador soporta guardar datos locales y tenemos algun dato que guardar.
   if (window.localStorage && localStorage.initialinput && localStorage.finaloutput) {
-    document.getElementById("out").className = "none"; 
-    //document.getElementById("fileinput").innerHTML = localStorage.fileinput; 
+    document.getElementById("out").className = "unhidden"; 
+    document.getElementById("fileinput").innerHTML = localStorage.fileinput; 
     document.getElementById("initialinput").innerHTML = localStorage.initialinput;
     document.getElementById("finaloutput").innerHTML = localStorage.finaloutput;
   }
